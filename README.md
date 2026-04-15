@@ -115,26 +115,29 @@ Each project has a dedicated portal: /projects/portal/{projectId}
 
 ## Project Structure
 
+```
 project-management-system/
-├── backend/
-│ ├── config/
-│ ├── controllers/
-│ ├── middleware/
-│ ├── models/
-│ ├── routes/
-│ ├── utils/
-│ └── index.js
 │
-├── frontend/
+├── backend/ # Backend (Node.js + Express API)
+│ ├── config/ # Configuration files (DB, Cloudinary, etc.)
+│ ├── controllers/ # Route logic & request handlers
+│ ├── middleware/ # Custom middleware (auth, error handling)
+│ ├── models/ # Database schemas
+│ ├── routes/ # API routes
+│ ├── utils/ # Helper functions
+│ └── index.js # Backend entry point
+│
+├── frontend/ # Frontend (React + Vite)
 │ ├── src/
-│ │ ├── api/
-│ │ ├── components/
-│ │ ├── context/
-│ │ ├── pages/
-│ │ └── services/
-│ └── main.tsx
+│ │ ├── api/ 
+│ │ ├── components/ # Reusable components
+│ │ ├── context/ # State management
+│ │ ├── pages/ # App pages
+│ │ └── services/ # All Api functions
+│ └── main.tsx # Frontend entry point
 │
-└── README.md
+└── README.md # Documentation
+```
 
 ---
 
@@ -148,48 +151,48 @@ All endpoints are prefixed with: /api/v1/user
 / → Landing Page
 
 ### Authenticated Routes
-/projects
-/projects/dashboard/{role}
-/projects/portal/{projectId}
+- /projects
+- /projects/dashboard/{role}
+- /projects/portal/{projectId}
 
 
 ### Project Portal Routes
-/projects/portal/{projectId}/dashboard
-/projects/portal/{projectId}/github
-/projects/portal/{projectId}/
-/projects/portal/{projectId}/backlog
-/projects/portal/{projectId}/bugtracker
-/projects/portal/{projectId}/resources
-/projects/portal/{projectId}/team
-/projects/portal/{projectId}/settings
+- /projects/portal/{projectId}/dashboard
+- /projects/portal/{projectId}/github
+- /projects/portal/{projectId}/
+- /projects/portal/{projectId}/backlog
+- /projects/portal/{projectId}/bugtracker
+- /projects/portal/{projectId}/resources
+- /projects/portal/{projectId}/team
+-  /projects/portal/{projectId}/settings
 
 ## Installation
 
 ### 1. Clone Repository
-git clone
+- git clone
 
 ### 2. Backend Setup
-cd backend
-npm install
-npm run dev
+- cd backend
+- npm install
+- npm run dev
 
 ### 3. Frontend Setup
-cd pms-frontend
-npm install
-npm run dev
+- cd pms-frontend
+- npm install
+- npm run dev
 
 ### 4. Backend .env Setup
-PORT=4000
-MONGODB_URL=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_api_secret
-FOLDER_NAME=your_folder_name
-MAIL_HOST=smtp.gmail.com
-MAIL_USER=your_email@gmail.com
-MAIL_PASS=your_app_password
-GITHUB_TOKEN=your_github_token
+- PORT=4000
+- MONGODB_URL=your_mongodb_connection_string
+- JWT_SECRET=your_jwt_secret
+- CLOUDINARY_CLOUD_NAME=your_cloud_name
+- CLOUDINARY_API_KEY=your_api_key
+- CLOUDINARY_API_SECRET=your_api_secret
+- FOLDER_NAME=your_folder_name
+- MAIL_HOST=smtp.gmail.com
+- MAIL_USER=your_email@gmail.com
+- MAIL_PASS=your_app_password
+- GITHUB_TOKEN=your_github_token
 
 ### 5. Frontend .env Setup
-VITE_API_BASE_URL=http://localhost:4000/api/v1/user
+- VITE_API_BASE_URL=http://localhost:4000/api/v1/user
